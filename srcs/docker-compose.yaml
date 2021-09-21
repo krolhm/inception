@@ -1,0 +1,21 @@
+version '3.8'
+
+services:
+    mariadb:
+        env_file:
+            - .env
+
+    wordpress:
+        env_file:
+            - .env
+
+    nginx:
+
+
+volumes:
+    dbdata:
+
+    wordpress:
+
+networks:
+    app-newtork:
