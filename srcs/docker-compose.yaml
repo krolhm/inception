@@ -1,51 +1,51 @@
-version '3.8'
+version: '3.8'
 
 services:
-	mariadb:
-		image: mariadb:image
-		build:
-		  context: ./requirements/mariadb
-		container_name: mariadb
-		volumes:
-			- database:/var/lib/mysql
-		networks:
-			- app-network
-		env_file:
-			- .env
-		restart: always
-
-	wordpress:
-		image: wordpress:image
-		build:
-			context: ./requirements/wordpress
-		container_name: wordpress
-		volumes:
-        	- wordpress:/var/www/wordpress
-		depends_on:
-        	- mariadb
-		networks:
+    mariadb:
+        image: mariadb:image
+        build:
+          context: ./requirements/mariadb
+        container_name: mariadb
+        volumes:
+            - database:/var/lib/mysql
+        networks:
             - app-network
-		env_file:
-			- .env
-		restart: always
+        env_file:
+            - .env
+        restart: always
 
-	nginx:
-		image: nginx:image
-		build:
-		  context: ./requirements/nginx
-		container_name: nginx
-		volumes:
-			- wordpress:/var/www/wordpress
-		depends_on:
-			- wordpress
-		ports:
-			- "443:443"
-		networks:
-			- app-network
-		restart: always
+    wordpress:
+        image: wordpress:image
+        build:
+            context: ./requirements/wordpress
+        container_name: wordpress
+        volumes:
+            - wordpress:/var/www/wordpress
+        depends_on:
+            - mariadb
+        networks:
+            - app-network
+        env_file:
+            - .env
+        restart: always
+
+    nginx:
+        image: nginx:image
+        build:
+          context: ./requirements/nginx
+        container_name: nginx
+        volumes:
+            - wordpress:/var/www/wordpress
+        depends_on:
+            - wordpress
+        ports:
+            - "443:443"
+        networks:
+            - app-network
+        restart: always
 
 volumes:
-	database:
+    database:
         name: database
         driver: local
         driver_opts:
@@ -61,5 +61,5 @@ volumes:
             device: /home/${USER}/data/wordpress
 
 networks:
-	app-newtork:
-		driver: bridge
+    app-newtork:
+        driver: bridge
