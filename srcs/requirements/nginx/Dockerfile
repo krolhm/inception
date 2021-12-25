@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/25 18:42:54 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/25 18:57:57 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/25 19:00:23 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ FROM	debian:buster
 LABEL   maintainer="rbourgea <rbourgea@student.42.fr>"
 
 RUN		apt-get update && apt-get -y upgrade && \
-		apt-get install -y debconf && \
 		apt-get install -y nginx && \
 		apt-get install -y openssl && \
 		mkdir /var/www/wordpress && \
