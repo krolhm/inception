@@ -6,13 +6,14 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/25 16:08:04 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/25 16:09:41 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/25 18:43:40 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FROM    debian:buster
+LABEL   maintainer="rbourgea <rbourgea@student.42.fr>"
 
-RUN     apt-get update
+RUN     apt-get update && apt-get -y upgrade
 
 RUN     apt-get install -y php7.3-fpm php7.3-mysql php7.3-cgi curl
 

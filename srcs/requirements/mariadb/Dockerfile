@@ -6,13 +6,14 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/25 15:55:19 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/25 15:59:06 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/25 18:43:29 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FROM    debian:buster
+LABEL   maintainer="rbourgea <rbourgea@student.42.fr>"
 
-RUN     apt-get update
+RUN     apt-get update && apt-get -y upgrade
 
 RUN     apt-get install -y mariadb-server
 

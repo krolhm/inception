@@ -1,6 +1,19 @@
-FROM	debian:buster
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Dockerfile                                         :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/12/25 18:42:54 by rbourgea          #+#    #+#              #
+#    Updated: 2021/12/25 18:43:35 by rbourgea         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-RUN		apt-get update && \
+FROM	debian:buster
+LABEL   maintainer="rbourgea <rbourgea@student.42.fr>"
+
+RUN		apt-get update && apt-get -y upgrade && \
 		apt-get install -y nginx && \
 		apt-get install -y openssl && \
 		mkdir /var/www/wordpress && \
