@@ -1,24 +1,65 @@
 version '3.8'
 
 services:
-    mariadb:
-        env_file:
-            - .env
+	mariadb:
+		image: mariadb:image
+		build:
+		  context: ./requirements/mariadb
+		container_name: mariadb
+		volumes:
+			- database:/var/lib/mysql
+		networks:
+			- app-network
+		env_file:
+			- .env
+		restart: always
 
-    wordpress:
-        env_file:
-            - .env
-
-    nginx:
-        ports:
-            - "443:443"
-        networks:
+	wordpress:
+		image: wordpress:image
+		build:
+			context: ./requirements/wordpress
+		container_name: wordpress
+		volumes:
+        	- wordpress:/var/www/wordpress
+		depends_on:
+        	- mariadb
+		networks:
             - app-network
+		env_file:
+			- .env
+		restart: always
+
+	nginx:
+		image: nginx:image
+		build:
+		  context: ./requirements/nginx
+		container_name: nginx
+		volumes:
+			- wordpress:/var/www/wordpress
+		depends_on:
+			- wordpress
+		ports:
+			- "443:443"
+		networks:
+			- app-network
+		restart: always
 
 volumes:
-    dbdata:
-
+	database:
+        name: database
+        driver: local
+        driver_opts:
+            type: none
+            o: bind
+            device: /home/${USER}/data/database
     wordpress:
+        name: wordpress
+        driver: local
+        driver_opts:
+            type: none
+            o: bind
+            device: /home/${USER}/data/wordpress
 
 networks:
-    app-newtork:
+	app-newtork:
+		driver: bridge
