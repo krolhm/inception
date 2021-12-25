@@ -61,5 +61,6 @@ volumes:
             device: /home/${USER}/data/wordpress
 
 networks:
-    app-newtork:
+    app-network:
+        name: app-network
         driver: bridge
