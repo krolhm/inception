@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/25 15:17:31 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/25 18:38:23 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/26 11:30:41 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ rm_images:
 rm_data:
 	sudo rm -rf /home/parallels/data/wordpress
 	sudo rm -rf /home/parallels/data/database
+	mkdir /home/parallels/data/
 	mkdir /home/parallels/data/wordpress
 	mkdir /home/parallels/data/database
 
