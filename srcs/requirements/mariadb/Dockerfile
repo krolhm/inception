@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/25 15:55:19 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/26 11:25:49 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/26 11:44:49 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,12 @@ LABEL   maintainer="rbourgea <rbourgea@student.42.fr>"
 
 RUN     apt-get update && apt-get -y upgrade
 
-RUN     apt-get install -y mariadb-server mariadb-client
+RUN     apt-get install -y mariadb-server
 
-COPY    /tools/create_db.sql /etc/mysql/
-COPY    /tools/start_db.sh /
+COPY    ./conf/rbourgea.cnf /etc/mysql/rbourgea.cnf
+RUN     chmod 0444 /etc/mysql/rbourgea.cnf
 
-CMD     bash start_db.sh
+COPY    ./conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
+COPY    ./tools/mariadb_start.sh /bin/mariadb_start.sh
+
+CMD     bash /bin/mariadb_start.sh

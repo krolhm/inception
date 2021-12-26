@@ -11,7 +11,7 @@ services:
         expose:
             - "3306"
         networks:
-            - app-network
+            - docker-network
         env_file:
             - .env
         restart: always
@@ -28,7 +28,7 @@ services:
         expose:
             - "9000"
         networks:
-            - app-network
+            - docker-network
         env_file:
             - .env
         restart: always
@@ -45,7 +45,7 @@ services:
         ports:
             - "443:443"
         networks:
-            - app-network
+            - docker-network
         restart: always
 
 volumes:
@@ -65,6 +65,6 @@ volumes:
             device: /home/${USER}/data/wordpress
 
 networks:
-    app-network:
-        name: app-network
+    docker-network:
+        name: docker-network
         driver: bridge
