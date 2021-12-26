@@ -6,13 +6,14 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/25 15:17:31 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/26 11:50:40 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/26 12:05:48 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 DCOMPOSE	=	./srcs/docker-compose.yaml
 
 all:
+	echo "127.0.0.1 rbourgea.42.fr" | sudo tee -a /etc/hosts
 	docker-compose -f $(DCOMPOSE) build
 	docker-compose -f $(DCOMPOSE) up -d
 	

@@ -8,14 +8,14 @@ wp config create	--allow-root \
 					--dbuser=$DB_USER \
 					--dbpass=$DB_PASSWORD \
 					--dbhost=$DB_HOST \
-					--dbprefix=wp_ \
+					--dbprefix=42_ \
 					--path=/var/www/wordpress
 sleep 10
 fi
 
 wp core install		--allow-root \
 					--url=$WP_URL \
-					--title=my_site \
+					--title=42GameDev \
 					--admin_user=$WP_ADMIN \
 					--admin_password=$WP_ADMIN_PASSWORD \
 					--admin_email=$WP_ADMIN_EMAIL \
