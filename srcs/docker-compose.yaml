@@ -48,6 +48,15 @@ services:
             - docker-network
         restart: always
 
+    redis:
+        image: redis:image
+        build:
+            context: ./bonus/redis
+        container_name: redis
+        networks:
+            - docker-network
+        restart: always
+
 volumes:
     database:
         name: database

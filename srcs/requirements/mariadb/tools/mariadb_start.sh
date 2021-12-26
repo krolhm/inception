@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    mariadb_start.sh                                   :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/12/26 12:26:26 by rbourgea          #+#    #+#              #
+#    Updated: 2021/12/26 12:26:26 by rbourgea         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 service mysql start
 
 find_my_user=$(echo "SELECT USER from mysql.user;" | mysql --no-defaults -u root | grep "$DB_USER" | wc -l)
