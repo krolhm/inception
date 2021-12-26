@@ -6,13 +6,16 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/25 15:17:31 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/26 12:33:19 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/26 12:35:27 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 DCOMPOSE	=	./srcs/docker-compose.yaml
 
 all:
+	mkdir -p /home/$${USER}/data/
+	mkdir -p /home/$${USER}/data/wordpress
+	mkdir -p /home/$${USER}/data/database
 	echo "127.0.0.1 rbourgea.42.fr" | sudo tee -a /etc/hosts
 	docker-compose -f $(DCOMPOSE) build
 	docker-compose -f $(DCOMPOSE) up -d
@@ -35,11 +38,7 @@ rm_images:
 	- docker rmi -f $$(docker images -qa)
 
 rm_data:
-	sudo rm -rf /home/$${USER}/data/wordpress
-	sudo rm -rf /home/$${USER}/data/database
-	mkdir -p /home/$${USER}/data/
-	mkdir -p /home/$${USER}/data/wordpress
-	mkdir -p /home/$${USER}/data/database
+	sudo rm -rf /home/$${USER}/data
 
 up:
 	docker-compose ./srcs/docker-compose.yaml up -d
