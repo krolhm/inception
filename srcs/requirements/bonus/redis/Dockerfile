@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/26 12:22:24 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/26 18:10:56 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/26 18:21:43 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,3 +20,5 @@ RUN     apt-get install -y redis-server
 COPY	./tools/redis.sh /bin/redis.sh
 
 CMD     bash /bin/redis.sh
+
+EXPOSE  6379
