@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/25 16:08:04 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/26 19:30:16 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/26 19:32:36 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,4 +37,4 @@ CMD		bash ../../../start_wp.sh
 
 #BONUS REDIS CACHE
 CMD		wget https://assets.digitalocean.com/articles/wordpress_redis/object-cache.php
-RUN		mv object-cache.php /var/www/wordpress/wp-content/
+CMD		mv object-cache.php /var/www/wordpress/wp-content/
