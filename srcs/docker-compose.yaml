@@ -53,9 +53,16 @@ services:
         build:
             context: ./requirements/bonus/redis
         container_name: redis
+        volumes:
+            - wordpress:/var/www/wordpress
+        depends_on:
+            - wordpress
+        ports:
+            - "6379:6379"
         networks:
             - docker-network
         restart: always
+        
 
 volumes:
     database:
