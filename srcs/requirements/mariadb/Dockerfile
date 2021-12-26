@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/25 15:55:19 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/26 11:47:48 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/26 11:50:45 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ LABEL   maintainer="rbourgea <rbourgea@student.42.fr>"
 
 RUN     apt-get update && apt-get -y upgrade
 
-RUN     apt-get install -y mariadb-server mariadb-client
+RUN     apt-get install -y mariadb-server
 
 COPY    ./conf/rbourgea.cnf /etc/mysql/rbourgea.cnf
 RUN     chmod 0444 /etc/mysql/rbourgea.cnf
