@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/26 12:22:24 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/26 18:47:23 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/26 19:07:44 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,4 +21,6 @@ RUN     apt-get install -y redis-server
 #RUN		chmod +x ./entrypoint.sh
 #ENTRYPOINT [ "sh", "./entrypoint.sh" ]
 
-CMD     redis-server --protected-mode no
+CMD     redis-server --maxmemory 256mb --maxmemory-policy allkeys-lru --protected-mode no
+
+# https://www.digitalocean.com/community/tutorials/how-to-configure-redis-caching-to-speed-up-wordpress-on-ubuntu-14-04

@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/25 16:08:04 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/25 19:00:28 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/26 19:15:42 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,5 +32,9 @@ RUN     chmod -R 755 /var/www/*
 
 RUN     service php7.3-fpm start; service php7.3-fpm stop
 COPY    /tools/start_wp.sh /
+
+#BONUS REDIS CACHE
+RUN		wget https://assets.digitalocean.com/articles/wordpress_redis/object-cache.php
+RUN		mv object-cache.php /var/www/wordpress/wp-content/
 
 CMD		bash ../../../start_wp.sh
