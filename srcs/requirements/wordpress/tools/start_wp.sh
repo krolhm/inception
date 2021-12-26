@@ -27,4 +27,7 @@ wp user create $WP_REG_USER	"$WP_REG_USER@$WP_URL" \
 					--user_pass=$WP_REG_USER_PASSWORD \
 					--path=/var/www/wordpress
 
+wp config set WP_REDIS_HOST redis
+wp config set WP_REDIS_PORT 6379 --raw
+
 /usr/sbin/php-fpm7.3 -F --nodaemonize
