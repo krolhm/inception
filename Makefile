@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/25 15:17:31 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/26 12:05:48 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/26 12:33:19 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,11 +35,11 @@ rm_images:
 	- docker rmi -f $$(docker images -qa)
 
 rm_data:
-	sudo rm -rf /home/parallels/data/wordpress
-	sudo rm -rf /home/parallels/data/database
-	mkdir -p /home/parallels/data/
-	mkdir -p /home/parallels/data/wordpress
-	mkdir -p /home/parallels/data/database
+	sudo rm -rf /home/$${USER}/data/wordpress
+	sudo rm -rf /home/$${USER}/data/database
+	mkdir -p /home/$${USER}/data/
+	mkdir -p /home/$${USER}/data/wordpress
+	mkdir -p /home/$${USER}/data/database
 
 up:
 	docker-compose ./srcs/docker-compose.yaml up -d

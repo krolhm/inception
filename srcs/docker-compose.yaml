@@ -51,7 +51,7 @@ services:
     redis:
         image: redis:image
         build:
-            context: ./bonus/redis
+            context: ./requirements/bonus/redis
         container_name: redis
         networks:
             - docker-network
