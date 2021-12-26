@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/26 12:22:24 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/26 18:27:54 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/26 18:30:57 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ RUN     apt-get update && apt-get -y upgrade
 
 RUN     apt-get install -y redis-server
 
-COPY	./tools/redis.sh /
+COPY	./tools/redis.sh ./entrypoint.sh
 
-CMD     bash redis.sh
+RUN		chmod +x ./entrypoint.sh
+
+ENTRYPOINT [ "sh", "./entrypoint.sh" ]
