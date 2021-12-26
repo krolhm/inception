@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/25 16:08:04 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/26 19:27:53 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/26 19:30:16 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ LABEL   maintainer="rbourgea <rbourgea@student.42.fr>"
 
 RUN     apt-get update && apt-get -y upgrade
 
-RUN     apt-get install -y php7.3-fpm php7.3-mysql php7.3-cgi curl
+RUN     apt-get install -y php7.3-fpm php7.3-mysql php7.3-cgi curl wget
 
 RUN     curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 RUN     chmod +x wp-cli.phar
