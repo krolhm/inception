@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/26 18:53:21 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/27 13:27:46 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/27 13:29:37 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ RUN     apt-get install -y vsftpd openssl openssh-server
 
 RUN     openssl req -x509 -nodes -days 365 -newkey rsa:2048  -keyout /etc/ssl/private/vsftpd.pem -out /etc/ssl/private/vsftpd.pem -subj "/C=FR/ST=Ile de France/L=Paris/O=42/OU=inception/CN=rbourgea.42.fr"
 
-CMD     mkdir /etc/vsftpd
+RUN     mkdir -p /etc/vsftpd
 
 RUN     echo 'rsa_cert_file=/etc/ssl/private/vsftpd.pem' >> /etc/vsftpd/vsftpd.conf \
         && echo 'rsa_private_key_file=/etc/ssl/private/vsftpd.pem' >> /etc/vsftpd/vsftpd.conf \
