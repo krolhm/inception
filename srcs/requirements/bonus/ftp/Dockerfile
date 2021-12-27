@@ -6,12 +6,14 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/26 18:53:21 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/27 13:29:37 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/27 14:10:46 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FROM    debian:buster
 LABEL   maintainer="rbourgea <rbourgea@student.42.fr>"
+
+EXPOSE  21
 
 RUN     apt-get update && apt-get -y upgrade
 
@@ -49,5 +51,3 @@ ADD     ./tools/ftp.sh /usr/bin/ftp.sh
 RUN     chmod +x /usr/bin/ftp.sh
 
 CMD     bash /usr/bin/ftp.sh
-
-EXPOSE 21
