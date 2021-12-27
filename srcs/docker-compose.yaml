@@ -72,7 +72,7 @@ services:
             - wordpress:/var/www/wordpress
         depends_on:
             - wordpress
-        expose:
+        ports:
             - "21:21"
         networks:
             - docker-network
