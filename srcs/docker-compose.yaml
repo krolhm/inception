@@ -48,6 +48,17 @@ services:
             - docker-network
         restart: always
 
+    cv:
+        image: cv:image
+        build:
+            context: ./requirements/bonus/cv
+        container_name: cv
+        ports:
+            - "8081:8081"
+        networks:
+            - docker-network
+        restart: always
+
     redis:
         image: redis:image
         build:

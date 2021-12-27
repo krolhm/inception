@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/25 16:08:04 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/27 15:05:43 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/27 15:24:22 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,9 +30,9 @@ RUN     wp core download --path=/var/www/wordpress --allow-root
 RUN     chown -R www-data:www-data *
 RUN     chmod -R 755 /var/www/*
 
+ADD		/conf/wp-config.php /var/www/wordpress/wp-config.php
+
 RUN     service php7.3-fpm start; service php7.3-fpm stop
 COPY    /tools/start_wp.sh /
 
 CMD		bash ../../../start_wp.sh
-
-COPY	/conf/wp-config.php /var/www/wordpress/wp-config.php
