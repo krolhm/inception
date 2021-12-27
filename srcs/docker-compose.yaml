@@ -62,6 +62,23 @@ services:
         networks:
             - docker-network
         restart: always
+    
+    ftp:
+        image: ftp:image
+        build:
+            context: ./requirements/bonus/ftp
+        container_name: ftp
+        volumes:
+            - wordpress:/var/www/wordpress
+        depends_on:
+            - wordpress
+        expose:
+            - "21:21"
+        networks:
+            - docker-network
+        env_file:
+            - .env
+        restart: always
         
 
 volumes:
