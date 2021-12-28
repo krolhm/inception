@@ -104,6 +104,19 @@ services:
         networks:
             - docker-network
         restart: always
+    
+    grafana:
+        image: grafana:image
+        build:
+            context: ./requirements/bonus/grafana
+        container_name: grafana
+        volumes:
+            - grafana:/var/www/grafana
+        ports:
+            - "3000:3000"
+        networks:
+            - docker-network
+        restart: always
 
 
 volumes:

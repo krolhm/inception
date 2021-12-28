@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/26 18:53:21 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/28 12:22:19 by rbourgea         ###   ########.fr        #
+#    Created: 2021/12/28 12:02:33 by rbourgea          #+#    #+#              #
+#    Updated: 2021/12/28 12:05:02 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,6 @@ LABEL   maintainer="rbourgea <rbourgea@student.42.fr>"
 
 RUN     apt-get update && apt-get -y upgrade
 
-RUN     apt-get install -y vsftpd
+RUN     apt-get install -y grafana
 
-COPY	./config/vsftpd.conf /etc/vsftpd/vsftpd.conf
-
-RUN     chmod +x /etc/vsftpd/vsftpd.conf
-
-EXPOSE	21
-
-ENTRYPOINT [ "sh", "ftp.sh" ]
+CMD     systemctl start grafana-server
