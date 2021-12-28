@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/28 13:06:53 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/28 16:39:18 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/28 16:44:06 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,6 @@ RUN     apt-get install -y openjdk-11-jre screen wget
 RUN     wget https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a16bb49ecc1b9/server.jar
 
 CMD     mv server.jar minecraft_server_1.18.1.jar
-
-EXPOSE	2565
 
 CMD     screen
 
