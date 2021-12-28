@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/28 13:06:53 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/28 15:42:09 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/28 15:51:01 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ CMD     mv server.jar minecraft_server_1.18.1.jar
 
 EXPOSE	25565
 
-RUN     screen
+CMD     screen
 
 RUN     java -Xmx1024M -Xms1024M -jar minecraft_server_1.18.1.jar nogui
 
