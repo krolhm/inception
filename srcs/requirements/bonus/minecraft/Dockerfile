@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/28 13:06:53 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/28 16:25:56 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/28 16:28:53 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ CMD     sed -ie 's/eula=false/eula=true/g' eula.txt
 
 COPY	./tools/start.sh ./
 
-ENTRYPOINT [ "sh", "ftp.sh" ]
+ENTRYPOINT [ "sh", "start.sh" ]
 
 #pour verifier:
 #screen -list
