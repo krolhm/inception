@@ -87,8 +87,9 @@ services:
             - "21:21"
         networks:
             - docker-network
-        env_file:
-            - .env
+        environment:
+            FTP_USERNAME: "${FTP_USERNAME}"
+            FTP_PASSWORD: "${FTP_PASSWORD}"
         restart: always
 
     adminer:
