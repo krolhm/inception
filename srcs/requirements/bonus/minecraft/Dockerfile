@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/28 13:06:53 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/28 15:52:20 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/28 15:52:55 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ RUN     wget https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a
 
 CMD     mv server.jar minecraft_server_1.18.1.jar
 
-CMD     chmod +x minecraft_server_1.18.1.jar
+CMD     ls
 
 EXPOSE	25565
 
