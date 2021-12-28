@@ -105,15 +105,13 @@ services:
             - docker-network
         restart: always
     
-    grafana:
-        image: grafana:image
+    minecraft:
+        image: minecraft:image
         build:
-            context: ./requirements/bonus/grafana
-        container_name: grafana
-        volumes:
-            - grafana:/var/www/grafana
+            context: ./requirements/bonus/minecraft
+        container_name: minecraft
         ports:
-            - "3000:3000"
+            - "25565:25565"
         networks:
             - docker-network
         restart: always
@@ -134,13 +132,6 @@ volumes:
             type: none
             o: bind
             device: /home/${USER}/data/wordpress
-    grafana:
-        name: grafana
-        driver: local
-        driver_opts:
-            type: none
-            o: bind
-            device: /home/${USER}/data/grafana
 
 networks:
     docker-network:
