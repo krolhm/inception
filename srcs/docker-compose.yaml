@@ -90,7 +90,21 @@ services:
         env_file:
             - .env
         restart: always
-        
+
+    adminer:
+        image: adminer:image
+        build:
+            context: ./requirements/bonus/adminer
+        container_name: adminer
+        depends_on:
+            - wordpress
+            - mariadb
+        ports:
+            - "8082:8082"
+        networks:
+            - docker-network
+        restart: always
+
 
 volumes:
     database:
