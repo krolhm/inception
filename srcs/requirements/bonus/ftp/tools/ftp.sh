@@ -12,6 +12,7 @@ if [ $? -eq 0 ]; then
 
   echo "" >> $conf_file
   echo "local_root=$FTP_ROOT" >> $conf_file
+  echo "secure_chroot_dir=$FTP_ROOT" >> $conf_file
 fi
 vsftpd $conf_file
 
