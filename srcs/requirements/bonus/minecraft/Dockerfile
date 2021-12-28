@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/28 13:06:53 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/28 13:25:01 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/28 13:28:00 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,11 @@ LABEL   maintainer="rbourgea <rbourgea@student.42.fr>"
 
 RUN     apt-get update && apt-get -y upgrade
 
-RUN     apt-get install -y openjdk-8-jre screen
+RUN     apt-get install -y software-properties-common 
+
+RUN     add-apt-repository ppa:webupd8team/java
+
+RUN     par-get install -y openjdk-8-jre screen
 
 RUN     ufw allow 25565
 
