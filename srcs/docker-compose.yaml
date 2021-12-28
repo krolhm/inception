@@ -87,9 +87,8 @@ services:
             - "21:21"
         networks:
             - docker-network
-        environment:
-            FTP_USERNAME: "${FTP_USERNAME}"
-            FTP_PASSWORD: "${FTP_PASSWORD}"
+        env_file:
+            - .env
         restart: always
 
     adminer:
@@ -111,6 +110,8 @@ services:
         build:
             context: ./requirements/bonus/minecraft
         container_name: minecraft
+        ports:
+            - "2565:2565"
         networks:
             - docker-network
         restart: always
