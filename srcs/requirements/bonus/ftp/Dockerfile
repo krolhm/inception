@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/26 18:53:21 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/28 15:32:50 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/28 15:33:28 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,6 @@ LABEL   maintainer="rbourgea <rbourgea@student.42.fr>"
 RUN     apt-get update && apt-get -y upgrade
 
 RUN     apt-get install -y vsftpd openssl
-
-RUN     openssl genrsa -out /etc/ssl/private/vsftpd.key
-
-RUN     openssl req -new -key /etc/ssl/private/vsftpd.key -out /etc/ssl/certs/vsftpd.csr
 
 RUN     openssl req -x509 -nodes -days 365 -newkey rsa:2048  -keyout /etc/ssl/private/vsftpd.key -out /etc/ssl/certs/vsftpd.pem -subj "/C=FR/ST=Ile de France/L=Paris/O=42/OU=inception/CN=rbourgea.42.fr"
 
