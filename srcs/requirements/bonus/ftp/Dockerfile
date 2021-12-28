@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/26 18:53:21 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/28 12:49:41 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/28 12:54:49 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ COPY	./conf/vsftpd.conf /etc/vsftpd/vsftpd.conf
 
 RUN     chmod +x /etc/vsftpd/vsftpd.conf
 
-COPY	./scripts/ftp.sh ./
+COPY	./tools/ftp.sh ./
 
 EXPOSE	21
 
