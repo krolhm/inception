@@ -114,7 +114,7 @@ services:
             - "25565:25565"
         networks:
             - docker-network
-        restart: always
+        restart: unless-stopped
 
 
 volumes:
