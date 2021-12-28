@@ -104,17 +104,15 @@ services:
         networks:
             - docker-network
         restart: always
-    
+
     minecraft:
         image: minecraft:image
         build:
             context: ./requirements/bonus/minecraft
         container_name: minecraft
-        ports:
-            - "25565:25565"
         networks:
             - docker-network
-        restart: unless-stopped
+        restart: always
 
 
 volumes:
