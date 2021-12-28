@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/26 18:53:21 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/28 15:29:58 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/28 15:32:50 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ RUN     openssl genrsa -out /etc/ssl/private/vsftpd.key
 
 RUN     openssl req -new -key /etc/ssl/private/vsftpd.key -out /etc/ssl/certs/vsftpd.csr
 
-RUN     openssl x509 -req -days 365 -in /etc/ssl/certs/vsftpd.csr -signkey /etc/ssl/private/vsftpd.key -out /etc/ssl/certs/vsftpd.pem
+RUN     openssl req -x509 -nodes -days 365 -newkey rsa:2048  -keyout /etc/ssl/private/vsftpd.key -out /etc/ssl/certs/vsftpd.pem -subj "/C=FR/ST=Ile de France/L=Paris/O=42/OU=inception/CN=rbourgea.42.fr"
 
 COPY	./conf/vsftpd.conf /etc/vsftpd/vsftpd.conf
 
