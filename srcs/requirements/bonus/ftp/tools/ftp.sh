@@ -14,11 +14,13 @@ conf_file="/etc/vsftpd/vsftpd.conf"
 #  echo "local_root=$FTP_ROOT" >> $conf_file
 #fi
 
-adduser -D $FTP_USERNAME && echo $FTP_USERNAME:$FTP_PASSWORD} | chpasswd
+#adduser -D $FTP_USERNAME && echo $FTP_USERNAME:$FTP_PASSWORD | chpasswd
 
-mkdir /home/$FTP_USERNAME
+useradd -m $FTP_USERNAME
 
-chown -R $FTP_USERNAME} /home/$FTP_USERNAME
+echo `$FTP_USERNAME:$FTP_USERNAME` | chpasswd
+
+#chown -R $FTP_USERNAME /home/$FTP_USERNAME
 
 
 vsftpd $conf_file
