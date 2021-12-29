@@ -16,9 +16,9 @@ conf_file="/etc/vsftpd/vsftpd.conf"
 
 #adduser -D $FTP_USERNAME && echo $FTP_USERNAME:$FTP_PASSWORD | chpasswd
 
-useradd -m $FTP_USERNAME
+useradd -m rbourgea
 
-echo `$FTP_USERNAME:$FTP_USERNAME` | chpasswd
+echo 'rbourgea:42gamedev' | sudo chpasswd
 
 #chown -R $FTP_USERNAME /home/$FTP_USERNAME
 
