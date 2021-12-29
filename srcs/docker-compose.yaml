@@ -83,8 +83,8 @@ services:
             - wordpress:/var/www/wordpress
         depends_on:
             - wordpress
-        ports:
-            - "21:21"
+        expose:
+            - "21"
         networks:
             - docker-network
         env_file:
@@ -110,8 +110,8 @@ services:
         build:
             context: ./requirements/bonus/minecraft
         container_name: minecraft
-        expose:
-            - "25565"
+        ports:
+            - "25565:25565"
         networks:
             - docker-network
         restart: always
