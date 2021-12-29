@@ -111,7 +111,7 @@ services:
             context: ./requirements/bonus/minecraft
         container_name: minecraft
         expose:
-            - "2000"
+            - "25565"
         networks:
             - docker-network
         restart: always
