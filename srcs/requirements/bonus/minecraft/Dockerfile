@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/28 13:06:53 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/29 21:25:03 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/29 21:35:53 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,15 +21,15 @@ RUN     wget https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a
 
 RUN     mv server.jar minecraft_server_1.18.1.jar
 
-CMD     screen
+COPY	./conf/eula.txt ./
 
-CMD     java -Xmx1024M -Xms1024M -jar minecraft_server_1.18.1.jar nogui
+CMD     screen && java -Xmx1024M -Xms1024M -jar minecraft_server_1.18.1.jar nogui
 
-CMD     sed -ie 's/eula=false/eula=true/g' eula.txt
+#CMD     sed -ie 's/eula=false/eula=true/g' eula.txt
 
 #COPY	./tools/start.sh ./
 
-CMD     java -Xmx1024M -Xms1024M -jar minecraft_server_1.18.1.jar nogui
+#CMD     java -Xmx1024M -Xms1024M -jar minecraft_server_1.18.1.jar nogui
 
 #pour verifier:
 #screen -list
