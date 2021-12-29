@@ -83,8 +83,8 @@ services:
             - wordpress:/var/www/wordpress
         depends_on:
             - wordpress
-        expose:
-            - "21"
+        ports:
+            - "21:21"
         networks:
             - docker-network
         env_file:
@@ -110,6 +110,8 @@ services:
         build:
             context: ./requirements/bonus/minecraft
         container_name: minecraft
+        volumes:
+            - minecraft:/var/www/minecraft
         ports:
             - "25565:25565"
         networks:
@@ -132,6 +134,13 @@ volumes:
             type: none
             o: bind
             device: /home/${USER}/data/wordpress
+    minecraft:
+        name: minecraft
+        driver: local
+        driver_opts:
+            type: none
+            o: bind
+            device: /home/${USER}/data/minecraft
 
 networks:
     docker-network:
