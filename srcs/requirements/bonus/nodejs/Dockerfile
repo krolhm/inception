@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/29 21:54:54 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/30 12:23:12 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/30 12:34:27 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ RUN     apt-get update && apt-get -y upgrade && apt-get install -y curl sudo
 
 WORKDIR /app
 
-#RUN     curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+RUN     curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 
-#RUN     apt-get install -y nodejs nodejs-legacy
+RUN     apt-get install -y nodejs nodejs-legacy
 
 COPY    ./tools .
 
