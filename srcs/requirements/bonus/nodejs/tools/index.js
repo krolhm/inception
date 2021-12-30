@@ -1,7 +1,7 @@
 require('dotenv').config(); //initialize dotenv
-const Discord = require('discord.js'); //import discord.js
+const { Client, Intents } = require('discord.js');
 
-const client = new Discord.Client(); //create new client
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
