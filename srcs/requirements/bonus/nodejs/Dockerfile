@@ -6,7 +6,7 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/29 21:54:54 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/30 11:41:41 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/30 11:51:39 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ RUN     apt-get update && apt-get -y upgrade
 
 WORKDIR /app
 
-RUN     apt-get install -y nodejs npm
+RUN     apt-get install -y nodejs-legacy
 
 COPY    ./tools .
 

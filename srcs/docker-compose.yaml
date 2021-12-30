@@ -116,18 +116,16 @@ services:
             - .env
         restart: always
 
-    minecraft:
-        image: minecraft:image
-        build:
-            context: ./requirements/bonus/minecraft
-        container_name: minecraft
-        volumes:
-            - minecraft:/var/www/minecraft
-        ports:
-            - "25565:25565"
-        networks:
-            - docker-network
-        restart: always
+#    minecraft:
+#        image: minecraft:image
+#        build:
+#            context: ./requirements/bonus/minecraft
+#        container_name: minecraft
+#        ports:
+#            - "25565:25565"
+#        networks:
+#            - docker-network
+#        restart: always
 
 
 volumes:
@@ -145,13 +143,6 @@ volumes:
             type: none
             o: bind
             device: /home/${USER}/data/wordpress
-    minecraft:
-        name: minecraft
-        driver: local
-        driver_opts:
-            type: none
-            o: bind
-            device: /home/${USER}/data/minecraft
 
 networks:
     docker-network:
