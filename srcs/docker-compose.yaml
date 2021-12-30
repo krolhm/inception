@@ -110,6 +110,9 @@ services:
         build:
             context: ./requirements/bonus/nodejs
         container_name: nodejs
+        depends_on:
+            - wordpress
+            - mariadb
         networks:
             - docker-network
         env_file:

@@ -6,12 +6,11 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/29 21:54:54 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/30 12:17:48 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/30 12:23:12 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#FROM    debian:buster
-FROM    node:latest
+FROM    debian:buster
 LABEL   maintainer="rbourgea <rbourgea@student.42.fr>"
 
 RUN     apt-get update && apt-get -y upgrade && apt-get install -y curl sudo
