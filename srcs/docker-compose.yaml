@@ -105,6 +105,17 @@ services:
             - docker-network
         restart: always
 
+    nodejs:
+        image: nodejs:image
+        build:
+            context: ./requirements/bonus/nodejs
+        container_name: nodejs
+        networks:
+        - inception
+        env_file:
+        - .env
+        restart: always
+
     minecraft:
         image: minecraft:image
         build:
