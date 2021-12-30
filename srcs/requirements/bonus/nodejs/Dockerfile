@@ -6,14 +6,14 @@
 #    By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/29 21:54:54 by rbourgea          #+#    #+#              #
-#    Updated: 2021/12/30 12:00:49 by rbourgea         ###   ########.fr        #
+#    Updated: 2021/12/30 12:01:20 by rbourgea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FROM    debian:buster
 LABEL   maintainer="rbourgea <rbourgea@student.42.fr>"
 
-RUN     apt-get update && apt-get -y upgrade && apt-get install -y curl
+RUN     apt-get update && apt-get -y upgrade && apt-get install -y curl sudo
 
 WORKDIR /app
 
