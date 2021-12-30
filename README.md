@@ -3,3 +3,6 @@ This project aims to deepen your knowledge by making you use Docker. You will vi
 
 # debug command:
 `docker logs --tail 50 --follow --timestamps <container>`
+
+# note:
+minecraft container not work
