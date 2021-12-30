@@ -113,6 +113,8 @@ services:
         depends_on:
             - wordpress
             - mariadb
+        expose:
+            - "1234"
         networks:
             - docker-network
         env_file:
