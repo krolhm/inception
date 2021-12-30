@@ -111,9 +111,9 @@ services:
             context: ./requirements/bonus/nodejs
         container_name: nodejs
         networks:
-        - inception
+            - docker-network
         env_file:
-        - .env
+            - .env
         restart: always
 
     minecraft:
